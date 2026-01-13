@@ -41,6 +41,7 @@ LOCAL_APPS = (
     'applications.users',
     'applications.producto',
     'applications.contacto',
+    'applications.home',
 )
 
 

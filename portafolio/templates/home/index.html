@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Pisco | Desarrollo de Software a Medida{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <span class="hero-badge">Desarrollador de Software</span>
+            <h1>
+                Construyo <span>soluciones digitales</span><br>
+                que impulsan tu negocio
+            </h1>
+            <p>
+                Desarrollo páginas web modernas, tiendas online, sistemas a medida,
+                automatizaciones y análisis de datos con Python.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#contact" class="btn">Contáctame</a>
+                <a href="#projects" class="btn btn-outline">Ver Portafolio</a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="code-card">
+                <pre>
+<span>def</span> <span class="fn">crear_solucion</span>(negocio):
+    <span>return</span> "Impacto real 🚀"
+                </pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+    <div class="container">
+        <h2 class="section-title">Servicios</h2>
+        <p class="section-subtitle">
+            Soluciones digitales enfocadas en resultados reales.
+        </p>
+
+        <div class="grid services-grid">
+            {% for service in services %}
+            <div class="card service-card">
+                <i class="{{ service.icon }} icon"></i>
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section-dark">
+    <div class="container">
+        <h2 class="section-title">Proyectos</h2>
+        <p class="section-subtitle">
+            Algunos trabajos que demuestran mi experiencia.
+        </p>
+
+        <div class="grid projects-grid">
+            {% for project in projects %}
+            <div class="card project-card">
+                {% if project.image %}
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                {% endif %}
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description|truncatewords:18 }}</p>
+                <span class="tech">{{ project.technologies }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+    <div class="container">
+        <h2 class="section-title">Habilidades</h2>
+
+        <div class="skills-grid">
+            {% for skill in skills %}
+            <div class="skill">
+                <span>{{ skill.name }}</span>
+                <div class="progress">
+                    <div class="progress-bar" style="width: {{ skill.level }}%"></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section-dark">
+    <div class="container contact-grid">
+        <div>
+            <h2 class="section-title">Hablemos</h2>
+            <p class="section-subtitle">
+                ¿Tienes una idea o proyecto? Escríbeme y lo hacemos realidad.
+            </p>
+        </div>
+
+        <form method="post" class="contact-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Enviar mensaje</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
