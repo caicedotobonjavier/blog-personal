@@ -2,7 +2,7 @@ from django.shortcuts import render
 #
 from django.views.generic import TemplateView
 #
-from applications.producto.models import Servicios, Habilidades
+from applications.producto.models import Servicios, Habilidades, Proyecto
 #
 from applications.contacto.models import Contacto
 #
@@ -20,6 +20,7 @@ class IndexView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['services'] = Servicios.objects.all()
         context['skills'] = Habilidades.objects.all()
+        context['projects'] = Proyecto.objects.all()
         context['form'] = ContactoForm    
         return context
     

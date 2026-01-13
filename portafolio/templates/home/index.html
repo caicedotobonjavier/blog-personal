@@ -29,8 +29,25 @@
             <div class="code-card">
                 <pre>
 <span>def</span> <span class="fn">crear_solucion</span>(negocio):
-    <span>return</span> "Impacto real 🚀"
-                </pre>
+    <span class="cm">"""
+    Analiza las necesidades del cliente
+    y construye una solución digital a medida
+    """</span>
+
+    stack = [
+        <span class="st">"Python"</span>,
+        <span class="st">"Django"</span>,
+        <span class="st">"PostgreSQL"</span>,
+        <span class="st">"Automatización"</span>
+    ]
+
+    <span>if</span> negocio.<span class="fn">necesita_impacto</span>():
+        <span class="fn">optimizar</span>(stack)
+        <span class="fn">automatizar</span>(negocio.procesos)
+
+    <span>return</span> <span class="st">"Solución lista para crecer 🚀"</span>
+</pre>
+
             </div>
         </div>
     </div>
@@ -67,12 +84,12 @@
         <div class="grid projects-grid">
             {% for project in projects %}
             <div class="card project-card">
-                {% if project.image %}
-                    <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                {% if project.imagen %}
+                    <img src="{{ project.imagen.url }}" alt="{{ project.titulo }}">
                 {% endif %}
-                <h3>{{ project.title }}</h3>
-                <p>{{ project.description|truncatewords:18 }}</p>
-                <span class="tech">{{ project.technologies }}</span>
+                <h3>{{ project.titulo }}</h3>
+                <p>{{ project.descripcion|truncatewords:18 }}</p>
+                <span class="tech">{{ project.tecnologias }}</span>
             </div>
             {% endfor %}
         </div>
