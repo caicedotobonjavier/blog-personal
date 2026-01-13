@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Pisco | Desarrollo de Software a Medida{% endblock %}
+{% block title %}Taller del Código | Desarrollo de Software a Medida{% endblock %}
 
 {% block content %}
 
@@ -48,8 +48,8 @@
             {% for service in services %}
             <div class="card service-card">
                 <i class="{{ service.icon }} icon"></i>
-                <h3>{{ service.title }}</h3>
-                <p>{{ service.description }}</p>
+                <h3>{{ service.titulo }}</h3>
+                <p>{{ service.descripcion }}</p>
             </div>
             {% endfor %}
         </div>
@@ -87,9 +87,9 @@
         <div class="skills-grid">
             {% for skill in skills %}
             <div class="skill">
-                <span>{{ skill.name }}</span>
+                <span>{{ skill.nombre }}</span>
                 <div class="progress">
-                    <div class="progress-bar" style="width: {{ skill.level }}%"></div>
+                    <div class="progress-bar" style="width: {{ skill.nivel }}%;"></div>
                 </div>
             </div>
             {% endfor %}
@@ -100,10 +100,24 @@
 <!-- ================= CONTACT ================= -->
 <section id="contact" class="section-dark">
     <div class="container contact-grid">
-        <div>
+        <div style="text-align: justify;">
             <h2 class="section-title">Hablemos</h2>
             <p class="section-subtitle">
-                ¿Tienes una idea o proyecto? Escríbeme y lo hacemos realidad.
+                ¿Tienes una idea, un proyecto pendiente o necesitas modernizar tu presencia digital? <br><br>
+                
+                No importa si es un concepto inicial o un plan detallado, juntos podemos analizar tus objetivos y construir la solución perfecta.
+
+                Escríbeme hoy mismo para: <br><br>
+
+                Una consulta gratuita para discutir tu proyecto.<br>
+
+                Un presupuesto personalizado sin compromiso.<br>
+
+                Propuestas de soluciones técnicas adaptadas a tus necesidades.<br>
+
+                Ejemplos de proyectos similares que he desarrollado.<br>
+
+                Contáctame y transformemos tu visión en una realidad digital exitosa..
             </p>
         </div>
 
